@@ -51,7 +51,6 @@ void findClasses(char* name, struct st_class* c[], int csize){
 
 // You must complete these functions.
 int addNewClass(struct st_class* c[], int csize){
-// Caution : Don't allow the duplicate class code.
 // You must complete this function.
 
 	struct st_class* p = (struct st_class*)malloc(sizeof(struct st_class));
