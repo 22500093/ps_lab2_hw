@@ -1,0 +1,8 @@
+My Classes
+1. [101] C [credits 3 - A+~F]
+2. [110] Reading [credits 1 - P/F]
+3. [203] WebService [credits 3 - A+~F]
+4. [210] SocialService [credits 2 - A+~F]
+5. [301] OS [credits 3 - A+~F]
+6. [204] ProgramingStudio [credits 2 - A+~F]
+All : 6 classes, 14 credits (A+~F 13 credits, P/F 1 credits)
