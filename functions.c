@@ -113,7 +113,6 @@ void editClass(struct st_class* c[], int csize){
 
 
 // You must make all these functions.
-
 int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
                     // my[] : 내가 신청한 과목코드 배열
     int i, num, code;
@@ -170,28 +169,26 @@ void saveMyClass(int my[], int msize, struct st_class* c[], int csize){
     FILE* file;
     file = fopen("my_classes.txt", "w");
 
-    //if(file != NULL){     // 조건 필수!!
+    fprintf(file, "My Classes\n");
 
-        fprintf(file, "My Classes\n");
+    int all_credits=0;
+    int first=0, second=0;
 
-        int all_credits=0;
-        int first=0, second=0;
-
-        for(int i=0; i<msize; i++){
-            for(int j=0; j<csize; j++){
-                if( my[i] == c[j]->code ){
-                    fprintf(file, "%d. [%d] %s [credits %d - %s]\n", i+1, c[j]->code, c[j]->name, c[j]->unit, kname[c[j]->grading-1]);
+    for(int i=0; i<msize; i++){
+        for(int j=0; j<csize; j++){
+            if( my[i] == c[j]->code ){
+                fprintf(file, "%d. [%d] %s [credits %d - %s]\n", i+1, c[j]->code, c[j]->name, c[j]->unit, kname[c[j]->grading-1]);
                     
-                    all_credits += c[j]->unit;
-                    if(c[j]->grading == 1) first += c[j]->unit;
-                    else second += c[j]->unit;
+                all_credits += c[j]->unit;
+                if(c[j]->grading == 1) first += c[j]->unit;
+                else second += c[j]->unit;
 
-                    break;
-                }
+                break;
             }
         }
+    }
 
-        fprintf(file, "All : %d classes, %d credits (A+~F %d credits, P/F %d credits)\n", msize, all_credits, first, second);
-    //}
+    fprintf(file, "All : %d classes, %d credits (A+~F %d credits, P/F %d credits)\n", msize, all_credits, first, second);
+
 	fclose(file);		
 }
