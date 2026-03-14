@@ -109,7 +109,6 @@ void editClass(struct st_class* c[], int csize){
 	scanf("%d", &(p->grading));
 
 	printf("> Modified.\n");
-
 }
 
 
